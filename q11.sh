@@ -6,11 +6,11 @@ do
     then
         if [ `./$trimmedName` = "20" ]
         then
-            printf "%s\t%s\n" $file "10"
+            printf "%s\t%s\n" `echo $file | cut -d'/' -f2` "10"
         else
-            printf "%s\t%s\n" $file "7"
+            printf "%s\t%s\n" `echo $file | cut -d'/' -f2` "7"
         fi
     else
-        printf "%s\t%s\n" $file "5"
+        printf "%s\t%s\n" `echo $file | cut -d'/' -f2` "5"
     fi
 done 
