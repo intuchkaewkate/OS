@@ -1,7 +1,7 @@
 for file in $(find . -type f -name "*.c")
 do
     trimmedName=`echo $file | cut -d'/' -f2 | cut -d'.' -f1`
-    gcc -o $trimmedName $file
+    gcc -o $trimmedName $file 2> /dev/null
     if [ -f $trimmedName ]
     then
         if [ `./$trimmedName` = "20" ]
